@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0072b2" />
+  <title>Atlas Adat &amp; Iklim | Bentang Alam Advisory</title>
+  <meta name="description" content="Peta interaktif praktik adat dan kearifan lokal Indonesia yang berkaitan dengan iklim, lengkap dengan rujukan jurnal." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="assets/vendor/leaflet/MarkerCluster.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/atlas.css" />
+  <link rel="stylesheet" href="assets/css/a11y.css" />
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body class="page-atlas">
+
+  <nav class="skip-links" aria-label="Lompat ke bagian">
+    <a href="#konten">Lompat ke konten</a>
+    <a href="#atlasList">Lompat ke daftar praktik (alternatif peta)</a>
+    <a href="#kontak">Lompat ke footer</a>
+  </nav>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-bav.svg" alt="BAV, Bentang Alam Advisory. Ke beranda" width="254" height="40" />
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="menu-utama">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span> Menu
+      </button>
+      <nav id="menu-utama" class="nav__menu" aria-label="Menu utama">
+        <a href="index.html" class="nav__link">Beranda</a>
+        <div class="dropdown">
+          <button class="nav__link dropdown__btn" aria-expanded="false" aria-controls="dd-pengetahuan">
+            Pengetahuan <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown__panel" id="dd-pengetahuan">
+            <li><a href="index.html#praktik">Praktik Adat</a></li>
+            <li><a href="index.html#wawasan">Wawasan</a></li>
+            <li><a href="atlas.html">Atlas Adat &amp; Iklim</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="nav__link dropdown__btn" aria-expanded="false" aria-controls="dd-informasi">
+            Informasi <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown__panel" id="dd-informasi">
+            <li><a href="index.html#cara-berbagi">Cara Berbagi</a></li>
+            <li><a href="index.html#cerita">Cerita Kampung Adat</a></li>
+            <li><a href="index.html#prinsip">Prinsip Kami</a></li>
+          </ul>
+        </div>
+        <a href="atlas.html" class="nav__link" aria-current="page">Atlas</a>
+        <a href="index.html#tentang" class="nav__link">Tentang</a>
+        <a href="#kontak" class="btn btn--primary btn--sm">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="konten" tabindex="-1">
+    <section class="atlas-head braille-bg" aria-labelledby="atlas-h1">
+      <div class="container">
+        <h1 id="atlas-h1">Atlas Adat &amp; Iklim</h1>
+        <p id="atlasIntro">Praktik adat yang hubungannya dengan iklim sudah ditelusuri ke sumber.</p>
+        <details class="kriteria">
+          <summary>Kriteria inklusi dan catatan mutu data</summary>
+          <div>
+            <p>Sebuah praktik masuk atlas bila sumber yang dapat ditelusuri menunjukkan praktik, pengetahuan, aturan, atau kelembagaan adat itu dipakai untuk mengamati pola iklim, cuaca, atau musim; beradaptasi terhadap dampaknya; mengelola sumber daya untuk mengurangi kerentanan; menghadapi bencana terkait bahaya iklim; atau menjaga penyerap karbon. Hubungan umum dengan alam saja belum cukup. Respons terhadap variabilitas cuaca dicatat terpisah dari bukti adaptasi terhadap perubahan iklim jangka panjang.</p>
+            <p>Kerangka rujukan: Glosarium dan Bab 1 IPCC AR6 WGII, definisi bencana UNDRR, dan panduan UNFCCC tentang pengetahuan tradisional dalam adaptasi.</p>
+            <p><span class="flag flag--artikel">Sumber berupa artikel</span> menandai entri yang sumber utamanya artikel populer, bukan kajian ilmiah. <span class="flag flag--tak-tertelusur">Tautan belum tertelusur</span> menandai entri yang tautan sumber utamanya tidak bisa dibuka saat kurasi.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="atlas-tools" aria-label="Saring atlas">
+      <div class="container atlas-tools__inner">
+        <div class="field field--search">
+          <label for="q">Cari praktik, lokasi, atau kata kunci</label>
+          <input type="search" id="q" placeholder="contoh: sasi, irigasi, Bali" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="pulau">Wilayah</label>
+          <select id="pulau"><option value="">Semua wilayah</option></select>
+        </div>
+        <div class="field field--chips">
+          <span class="field__label" id="fungsi-label">Fungsi iklim <span class="muted small">(boleh pilih lebih dari satu)</span></span>
+          <div class="chips" id="fungsiChips" role="group" aria-labelledby="fungsi-label"></div>
+        </div>
+        <div class="atlas-tools__row">
+          <p id="count" class="count" aria-live="polite"></p>
+          <div class="atlas-tools__btns">
+            <button class="btn btn--outline btn--sm" id="toggleMap" aria-pressed="false">Sembunyikan peta</button>
+            <button class="btn btn--outline btn--sm" id="resetFilter">Atur ulang saringan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="atlas-body" id="atlasBody">
+      <section class="atlas-panel" aria-label="Daftar dan detail praktik">
+        <div id="atlasList" tabindex="-1">
+          <h2 class="visually-hidden">Daftar praktik</h2>
+          <ul class="alist" id="alist" role="list"></ul>
+        </div>
+        <article id="atlasDetail" class="adetail" tabindex="-1" hidden></article>
+      </section>
+
+      <section class="atlas-map-wrap" aria-label="Peta">
+        <div id="map" role="region" aria-label="Peta interaktif. Gunakan tombol panah untuk menggeser dan tombol plus atau minus untuk memperbesar. Daftar praktik di sebelahnya memuat informasi yang sama."></div>
+        <div class="legend" aria-hidden="true" id="legend"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="kontak" tabindex="-1">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo"><img src="assets/img/logo-bav-putih.svg" alt="BAV, Bentang Alam Advisory. Ke beranda" width="290" height="46" /></a>
+        <p>BAV menghimpun, mendokumentasikan, dan menghubungkan kearifan lokal masyarakat adat Indonesia dengan upaya ketahanan dan adaptasi iklim.</p>
+        <a class="footer__mail" data-site="email" href="mailto:halo@contoh.id">halo@contoh.id</a>
+      </div>
+      <nav aria-labelledby="f-info">
+        <h2 id="f-info">Informasi Umum</h2>
+        <ul>
+          <li><a href="index.html#praktik">Praktik Adat</a></li>
+          <li><a href="index.html#cara-berbagi">Cara Berbagi</a></li>
+          <li><a href="index.html#cerita">Cerita Kampung Adat</a></li>
+          <li><a href="atlas.html">Atlas Adat &amp; Iklim</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Data atlas</h2>
+        <p>Dikurasi oleh tim BAV dari kajian ilmiah dan sumber terbuka. Melihat kekeliruan atau punya sumber tambahan? Kabari kami lewat email.</p>
+      </div>
+      <div>
+        <h2>Aksesibilitas</h2>
+        <p>Tekan <kbd>Ctrl</kbd>+<kbd>U</kbd> atau tombol aksesibilitas di pojok kanan bawah untuk mengatur tampilan.</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Bentang Alam Advisory. Situs demo.</p>
+      <p>Peta: © kontributor OpenStreetMap, © CARTO. Garis pantai cadangan: Natural Earth.</p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+  <script src="assets/vendor/leaflet/leaflet.markercluster.js"></script>
+  <script src="assets/js/atlas-data.js"></script>
+  <script src="assets/js/peta-indonesia.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/atlas.js"></script>
+  <script src="assets/js/a11y.js"></script>
+</body>
+</html>

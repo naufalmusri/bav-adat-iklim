@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0072b2" />
+  <title>Adat &amp; Iklim | Bentang Alam Advisory</title>
+  <meta name="description" content="Bentang Alam Advisory (BAV): kajian dan inisiatif inklusif untuk aksi iklim Indonesia. Atlas pengetahuan adat dan kearifan lokal Nusantara untuk ketahanan iklim." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/a11y.css" />
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+
+  <!-- Skip link: lompat langsung untuk pengguna keyboard & pembaca layar -->
+  <nav class="skip-links" aria-label="Lompat ke bagian">
+    <a href="#menu-utama">Lompat ke menu utama</a>
+    <a href="#konten">Lompat ke konten</a>
+    <a href="#kontak">Lompat ke footer</a>
+  </nav>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-bav.svg" alt="BAV, Bentang Alam Advisory. Ke beranda" width="254" height="40" />
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="menu-utama">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span> Menu
+      </button>
+
+      <nav id="menu-utama" class="nav__menu" aria-label="Menu utama">
+        <a href="index.html" class="nav__link" aria-current="page">Beranda</a>
+        <div class="dropdown">
+          <button class="nav__link dropdown__btn" aria-expanded="false" aria-controls="dd-pengetahuan">
+            Pengetahuan <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown__panel" id="dd-pengetahuan">
+            <li><a href="#praktik">Praktik Adat</a></li>
+            <li><a href="#wawasan">Wawasan</a></li>
+            <li><a href="atlas.html">Atlas Adat &amp; Iklim</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="nav__link dropdown__btn" aria-expanded="false" aria-controls="dd-informasi">
+            Informasi <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="dropdown__panel" id="dd-informasi">
+            <li><a href="#cara-berbagi">Cara Berbagi</a></li>
+            <li><a href="#cerita">Cerita Kampung Adat</a></li>
+            <li><a href="#prinsip">Prinsip Kami</a></li>
+          </ul>
+        </div>
+        <a href="atlas.html" class="nav__link">Atlas</a>
+        <a href="#tentang" class="nav__link">Tentang</a>
+        <a href="#kontak" class="btn btn--primary btn--sm">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Hubungi
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="konten" tabindex="-1">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero braille-bg" aria-labelledby="hero-judul">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow" data-site="tagline">Kajian dan inisiatif inklusif untuk aksi iklim Indonesia</p>
+          <h1 id="hero-judul">Merawat kearifan adat untuk masa depan iklim Nusantara</h1>
+          <p class="lead">
+            Ruang bersama untuk mencatat pengetahuan masyarakat adat Indonesia: cara membaca musim,
+            mengelola air, menjaga hutan dan laut, sampai menyimpan pangan. Semuanya bekal menghadapi
+            perubahan iklim, dan semuanya milik komunitas yang menjaganya.
+          </p>
+          <div class="hero__cta">
+            <a href="atlas.html" class="btn btn--yellow">Jelajahi Atlas <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg></a>
+            <a href="#cara-berbagi" class="btn btn--ghost-light">Bagikan Pengetahuan Adat <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <span class="pill pill--yellow">🌾 Kearifan Lokal · Aksi Iklim</span>
+          <div class="hero__img hero__img--main" data-scene="arsitektur"></div>
+          <div class="hero__img hero__img--small" data-scene="malam"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ANGKA UTAMA (dihitung dari data atlas) ===================== -->
+    <section class="stats" aria-label="Ringkasan atlas">
+      <div class="container stats__grid" id="statsGrid"></div>
+    </section>
+
+    <!-- ===================== PRAKTIK ADAT ===================== -->
+    <section class="section section--soft" id="praktik" aria-labelledby="praktik-judul">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="praktik-judul">Praktik Adat Terdokumentasi</h2>
+          <p>Kearifan lokal dari berbagai penjuru Nusantara, dikelompokkan menurut fungsinya terhadap iklim dan lingkungan.</p>
+        </div>
+
+        <div class="chips" id="praktikFilter" role="group" aria-label="Saring menurut fungsi iklim"></div>
+        <p class="result-note" id="praktikNote" aria-live="polite"></p>
+        <ul class="grid grid--3" id="praktikGrid" role="list"></ul>
+
+        <div class="row-actions">
+          <a href="atlas.html" class="btn btn--primary btn--sm">Lihat semua di Atlas <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="atlas.html?tampilan=daftar" class="btn btn--outline btn--sm">Lihat sebagai daftar</a>
+        </div>
+
+        <div class="banner braille-bg">
+          <span class="banner__icon" aria-hidden="true">🌱</span>
+          <p>Kami mengundang Anda untuk ikut mendokumentasikan pengetahuan adat ini</p>
+          <a href="#cara-berbagi" class="btn btn--yellow btn--sm">Gabung Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARA BERBAGI ===================== -->
+    <section class="section" id="cara-berbagi" aria-labelledby="berbagi-judul">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <h2 id="berbagi-judul">Cara Berbagi Pengetahuan</h2>
+          <p>Ikuti langkah sederhana berikut untuk mulai mendokumentasikan kearifan adat bersama komunitas.</p>
+        </div>
+        <ol class="grid grid--4 steps" id="stepsGrid"></ol>
+        <div class="row-actions row-actions--center">
+          <a href="#kontak" class="btn btn--primary btn--sm">Mulai Berbagi Sekarang <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERITA ===================== -->
+    <section class="section section--blue" id="cerita" aria-labelledby="cerita-judul">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="cerita-judul">Cerita dari Kampung Adat</h2>
+          <p>Kisah, pengamatan, dan pelajaran tentang cara masyarakat adat beradaptasi dengan alam.</p>
+        </div>
+        <ul class="grid grid--3" id="ceritaGrid" role="list"></ul>
+
+        <div class="dashed">
+          <div class="dashed__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 17.2V4Z"/><path d="M8 9h8M8 12h5"/></svg>
+          </div>
+          <div class="dashed__text">
+            <h3>Punya cerita adat dari kampungmu?</h3>
+            <p>Bagikan pengalaman dan pengetahuan tentang cara komunitasmu membaca dan merawat alam.</p>
+          </div>
+          <a href="#kontak" class="btn btn--yellow btn--sm">Kirim Cerita</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WAWASAN ===================== -->
+    <section class="section section--soft" id="wawasan" aria-labelledby="wawasan-judul">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="wawasan-judul">Wawasan Adat &amp; Iklim</h2>
+          <p>Pemahaman tentang hubungan pengetahuan adat dan perubahan iklim.</p>
+        </div>
+        <div class="wawasan" id="wawasanWrap"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PITA ATLAS ===================== -->
+    <section class="section atlas-band braille-bg" id="atlas" aria-labelledby="atlas-judul">
+      <div class="container atlas-band__inner">
+        <div>
+          <span class="pill pill--yellow">🗺️ SUDAH TERSEDIA</span>
+          <h2 id="atlas-judul">Atlas <span>Adat &amp; Iklim</span></h2>
+          <p>
+            Setiap titik di atlas adalah praktik adat yang hubungannya dengan iklim sudah ditelusuri ke
+            sumber. Saring menurut fungsi iklim, wilayah, atau kata kunci, lalu buka rujukan jurnalnya.
+          </p>
+          <ul class="fungsi-list" id="fungsiList" aria-label="Jumlah praktik menurut fungsi iklim"></ul>
+          <a href="atlas.html" class="btn btn--yellow">Buka Atlas <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="mini-map" id="miniMap" role="img" aria-label="Sebaran titik praktik adat di peta Indonesia"></div>
+      </div>
+    </section>
+
+    <!-- ===================== TENTANG (zig-zag, pola CBM) ===================== -->
+    <section class="section" id="tentang" aria-labelledby="tentang-judul">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="tentang-judul">Tentang Bentang Alam Advisory</h2>
+          <p data-site="tagline">Kajian dan inisiatif inklusif untuk aksi iklim Indonesia</p>
+        </div>
+
+        <div class="about-row">
+          <div class="about-row__media" data-scene="hutan" aria-hidden="true"></div>
+          <div>
+            <h3>Siapa BAV?</h3>
+            <p>BAV bekerja di ruang publik aksi iklim: menyusun kajian, merancang inisiatif, dan membuka akses pengetahuan agar kebijakan iklim menjangkau mereka yang paling sering tertinggal.</p>
+            <a href="#kontak" class="card__more">Kenali tim kami <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="about-row">
+          <div class="about-row__media" data-scene="air" aria-hidden="true"></div>
+          <div>
+            <h3>Fokus kerja</h3>
+            <p>Lima isu yang kami pegang, semuanya berangkat dari pertanyaan yang sama: siapa yang menanggung dampak iklim, dan siapa yang dilibatkan dalam jawabannya.</p>
+            <ul>
+              <li>Budaya dan pengetahuan masyarakat adat</li>
+              <li>Sosial dan gender</li>
+              <li>Kesiapsiagaan bencana iklim</li>
+              <li>Inklusi disabilitas</li>
+              <li>Akses pengetahuan iklim yang terbuka</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-row">
+          <div class="about-row__media" data-scene="laut" aria-hidden="true"></div>
+          <div>
+            <h3>Kemitraan yang setara</h3>
+            <p>Pengetahuan adat bukan bahan mentah. Kami bekerja dengan persetujuan komunitas, atribusi yang adil, dan kendali komunitas atas data mereka sendiri.</p>
+            <a href="#prinsip" class="card__more">Baca prinsip kami <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRINSIP / MITRA / WILAYAH ===================== -->
+    <section class="section section--navy" id="prinsip" aria-label="Prinsip, mitra, dan wilayah">
+      <div class="container center">
+        <h2>Prinsip Kami</h2>
+        <ul class="tags" id="prinsipTags"></ul>
+
+        <h2>Bekerja Bersama</h2>
+        <ul class="mitra" id="mitraGrid"></ul>
+
+        <h2>Wilayah Dokumentasi</h2>
+        <ul class="wilayah" id="wilayahGrid"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="kontak" tabindex="-1">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo"><img src="assets/img/logo-bav-putih.svg" alt="BAV, Bentang Alam Advisory. Ke beranda" width="290" height="46" /></a>
+        <p>BAV menghimpun, mendokumentasikan, dan menghubungkan kearifan lokal masyarakat adat Indonesia dengan upaya ketahanan dan adaptasi iklim.</p>
+        <a class="footer__mail" data-site="email" href="mailto:halo@contoh.id">halo@contoh.id</a>
+      </div>
+      <nav aria-labelledby="f-info">
+        <h2 id="f-info">Informasi Umum</h2>
+        <ul>
+          <li><a href="#praktik">Praktik Adat</a></li>
+          <li><a href="#cara-berbagi">Cara Berbagi</a></li>
+          <li><a href="#cerita">Cerita Kampung Adat</a></li>
+          <li><a href="atlas.html">Atlas Adat &amp; Iklim</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-praktik">
+        <h2 id="f-praktik">Praktik di Atlas</h2>
+        <ul id="footerPraktik"></ul>
+      </nav>
+      <div>
+        <h2>Aksesibilitas</h2>
+        <p>Situs ini dirancang mengikuti WCAG 2.2 tingkat AA. Tekan <kbd>Ctrl</kbd>+<kbd>U</kbd> atau tombol aksesibilitas di pojok kanan bawah untuk mengatur tampilan. Menemukan hambatan? Kabari kami lewat email.</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Bentang Alam Advisory. Situs demo.</p>
+      <p>Ilustrasi: SVG placeholder. Peta: © OpenStreetMap, © CARTO.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/atlas-data.js"></script>
+  <script src="assets/js/peta-indonesia.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/a11y.js"></script>
+</body>
+</html>
