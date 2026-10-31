@@ -93,4 +93,5 @@ Fondasi aksesibilitas di luar menu: skip link, menu dropdown dengan `aria-expand
 - Atkinson Hyperlegible Next, OpenDyslexic: SIL Open Font License 1.1 (berkas lisensi di `assets/fonts/`).
 - Leaflet: BSD-2-Clause. Leaflet.markercluster: MIT.
 - Garis pantai: Natural Earth (domain publik).
-- Ubin peta: CARTO Voyager dengan data © OpenStreetMap. Layanan gratis CARTO punya batas penggunaan; periksa ketentuan terbaru CARTO sebelum situs dipakai luas atau untuk tujuan komersial.
+- Ubin peta: bawaan memakai OpenStreetMap standar (tanpa key). Server OSM dijalankan relawan, jadi cocok untuk situs dengan lalu lintas wajar; penggunaan berat dilarang tanpa izin.
+- Ingin tampilan CARTO Voyager? Sejak Agustus 2026 CARTO mewajibkan API key (gratis, tanpa antrean). Minta di https://carto.com/basemaps/apikey dengan domain situs Anda, lalu isi `PETA.cartoKey` di `assets/js/data.js`.

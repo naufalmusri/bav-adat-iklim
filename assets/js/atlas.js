@@ -110,11 +110,20 @@ function pinIcon(d) {
 function initMap() {
   map = L.map("map", { zoomControl: true, minZoom: 4, maxZoom: 15, keyboard: true }).setView([-2.5, 118], 5);
 
-  const tiles = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: "abcd",
-    maxZoom: 19,
-  }).addTo(map);
+  const osmAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">kontributor OpenStreetMap</a>';
+  const key = (typeof PETA !== "undefined" && PETA.cartoKey) || "";
+  const tiles = (key
+    ? L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(key)}`, {
+        attribution: `${osmAttr} &copy; <a href="https://carto.com/attributions">CARTO</a>`,
+        subdomains: "abcd",
+        maxZoom: 19,
+      })
+    : L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: `${osmAttr} · <a href="https://www.openstreetmap.org/fixthemap">Laporkan kesalahan peta</a>`,
+        maxZoom: 19,
+        referrerPolicy: "strict-origin-when-cross-origin", // diwajibkan kebijakan ubin OSM
+      })
+  ).addTo(map);
 
   // Cadangan bila ubin peta gagal dimuat (offline, diblokir jaringan, dsb.)
   let fallback = false, tileOk = false;

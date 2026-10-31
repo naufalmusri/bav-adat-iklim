@@ -11,6 +11,14 @@ const SITE = {
   email: "halo@contoh.id",
 };
 
+/* Peta dasar atlas.
+   Kosong  -> OpenStreetMap standar (gratis, tanpa key).
+   Diisi   -> CARTO Voyager (lebih kalem). Minta key gratis di
+              https://carto.com/basemaps/apikey dengan domain situs Anda. */
+const PETA = {
+  cartoKey: "",
+};
+
 /* Fungsi iklim: urutan & warna tetap (palet Okabe-Ito, aman buta warna).
    Kode dua huruf ditampilkan di penanda peta agar identitas tidak bergantung warna saja. */
 const KATEGORI = {
